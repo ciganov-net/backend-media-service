@@ -3,8 +3,8 @@ package repository
 import (
 	"context"
 
+	"github.com/ciganov-net/backend-media-service/internal/models"
 	"github.com/jackc/pgx/v5/pgxpool"
-	"github.com/rin-cast-9/s3_test/backend/internal/models"
 )
 
 type FileRepository struct {

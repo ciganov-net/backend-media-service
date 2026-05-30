@@ -10,7 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/credentials"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
-	appconfig "github.com/rin-cast-9/s3_test/backend/internal/config"
+	appconfig "github.com/ciganov-net/backend-media-service/internal/config"
 )
 
 type S3Storage struct {

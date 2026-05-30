@@ -3,9 +3,9 @@ package router
 import (
 	"time"
 
+	"github.com/ciganov-net/backend-media-service/internal/handlers"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/rin-cast-9/s3_test/backend/internal/handlers"
 )
 
 type RouterDependencies struct {

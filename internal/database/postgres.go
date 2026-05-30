@@ -4,8 +4,8 @@ import (
 	"context"
 	"log"
 
+	"github.com/ciganov-net/backend-media-service/internal/config"
 	"github.com/jackc/pgx/v5/pgxpool"
-	"github.com/rin-cast-9/s3_test/backend/internal/config"
 )
 
 func NewPostgres(cfg config.Config) *pgxpool.Pool {

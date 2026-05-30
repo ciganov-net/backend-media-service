@@ -1,4 +1,4 @@
-module github.com/rin-cast-9/s3_test/backend
+module github.com/ciganov-net/backend-media-service
 
 go 1.25.1
 

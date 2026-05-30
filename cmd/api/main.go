@@ -3,12 +3,12 @@ package main
 import (
 	"log"
 
-	"github.com/rin-cast-9/s3_test/backend/internal/config"
-	"github.com/rin-cast-9/s3_test/backend/internal/database"
-	"github.com/rin-cast-9/s3_test/backend/internal/handlers"
-	"github.com/rin-cast-9/s3_test/backend/internal/repository"
-	"github.com/rin-cast-9/s3_test/backend/internal/router"
-	"github.com/rin-cast-9/s3_test/backend/internal/storage"
+	"github.com/ciganov-net/backend-media-service/internal/config"
+	"github.com/ciganov-net/backend-media-service/internal/database"
+	"github.com/ciganov-net/backend-media-service/internal/handlers"
+	"github.com/ciganov-net/backend-media-service/internal/repository"
+	"github.com/ciganov-net/backend-media-service/internal/router"
+	"github.com/ciganov-net/backend-media-service/internal/storage"
 )
 
 func main() {

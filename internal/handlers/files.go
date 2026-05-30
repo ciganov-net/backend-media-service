@@ -5,11 +5,11 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/ciganov-net/backend-media-service/internal/models"
+	"github.com/ciganov-net/backend-media-service/internal/repository"
+	"github.com/ciganov-net/backend-media-service/internal/storage"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	"github.com/rin-cast-9/s3_test/backend/internal/models"
-	"github.com/rin-cast-9/s3_test/backend/internal/repository"
-	"github.com/rin-cast-9/s3_test/backend/internal/storage"
 )
 
 type FileHandler struct {
