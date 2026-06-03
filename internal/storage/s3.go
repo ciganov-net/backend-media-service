@@ -35,10 +35,13 @@ func NewS3Storage(cfg appconfig.Config) *S3Storage {
 		panic(err)
 	}
 
-	client := s3.NewFromConfig(sdkConfig, func(o *s3.Options) {
-		o.BaseEndpoint = aws.String(cfg.S3Endpoint)
-		o.UsePathStyle = *aws.Bool(true)
-	})
+	client := s3.NewFromConfig(
+		sdkConfig,
+		func(o *s3.Options) {
+			o.BaseEndpoint = aws.String(cfg.S3Endpoint)
+			o.UsePathStyle = *aws.Bool(true)
+		},
+	)
 
 	storage := &S3Storage{
 		Client: client,

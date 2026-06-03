@@ -16,6 +16,11 @@ func RunMigrations(db *pgxpool.Pool) error {
 		mime_type TEXT NOT NULL,
 		created_at TIMESTAMP NOT NULL DEFAULT NOW()
 	);
+
+	CREATE TABLE IF NOT EXISTS user_avatars (
+		user_id TEXT PRIMARY KEY,
+		file_id UUID NOT NULL REFERENCES files(id) ON DELETE CASCADE,
+	);
 	`
 
 	_, err := db.Exec(context.Background(), query)

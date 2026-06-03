@@ -3,16 +3,15 @@ package router
 import (
 	"time"
 
-	"github.com/ciganov-net/backend-media-service/internal/handlers"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
-type RouterDependencies struct {
-	FileHandler *handlers.FileHandler
-}
+// type RouterDependencies struct {
+// 	FileHandler *handlers.FileHandler
+// }
 
-func SetupRouter(deps RouterDependencies) *gin.Engine {
+func SetupRouter() *gin.Engine {
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
@@ -38,10 +37,11 @@ func SetupRouter(deps RouterDependencies) *gin.Engine {
 		c.JSON(200, gin.H{"status": "ok"})
 	})
 
-	r.GET("/files", deps.FileHandler.GetFiles)
-	r.POST("/upload", deps.FileHandler.UploadFile)
-	r.DELETE("/files/:id", deps.FileHandler.DeleteFile)
-	r.GET("/files/:id/download", deps.FileHandler.GetDownloadURL)
+	// was used for testing in the browser
+	// r.GET("/files", deps.FileHandler.GetFiles)
+	// r.POST("/upload", deps.FileHandler.UploadFile)
+	// r.DELETE("/files/:id", deps.FileHandler.DeleteFile)
+	// r.GET("/files/:id/download", deps.FileHandler.GetDownloadURL)
 
 	return r
 }
