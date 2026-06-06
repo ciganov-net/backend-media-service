@@ -3,7 +3,6 @@ package service
 import (
 	"io"
 
-	"github.com/ciganov-net/backend-media-service/internal/models"
 	"github.com/ciganov-net/backend-media-service/internal/repository"
 )
 
@@ -36,7 +35,7 @@ func (s *MediaService) UploadAvatar(
 		}
 	}
 
-	newFile, err := s.files.Upload(filename, contentType, size, file)
+	newFile, err := s.files.Upload(filename, contentType, "avatar", size, file)
 	if err != nil {
 		return "", err
 	}
@@ -61,16 +60,26 @@ func (s *MediaService) DeleteAvatar(userID string) error {
 	return nil
 }
 
-func (s *MediaService) GetAvatar(userID string) (*models.File, error) {
-	ua, err := s.avatarRepository.GetByUserID(userID)
+func (s *MediaService) UploadFile(
+	filename string,
+	contentType string,
+	category string,
+	size int64,
+	file io.Reader,
+) (fileID string, err error) {
+	newFile, err := s.files.Upload(filename, contentType, category, size, file)
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
-	file, err := s.files.Get(ua.FileID)
+	return newFile.ID, nil
+}
+
+func (s *MediaService) GetFile(fileID string) (string, error) {
+	url, err := s.files.GetUrl(fileID)
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
-	return file, nil
+	return url, nil
 }

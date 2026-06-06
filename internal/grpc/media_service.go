@@ -35,3 +35,46 @@ func (s *MediaGrpcServer) UploadAvatar(
 
 	return &pb.UploadAvatarResponse{FileId: fileID}, nil
 }
+
+func (s *MediaGrpcServer) DeleteAvatar(
+	ctx context.Context,
+	req *pb.DeleteAvatarRequest,
+) (*pb.DeleteAvatarResponse, error) {
+	err := s.mediaService.DeleteAvatar(req.UserId)
+	if err != nil {
+		return nil, err
+	}
+
+	return &pb.DeleteAvatarResponse{Ok: true}, nil
+}
+
+func (s *MediaGrpcServer) UploadFile(
+	ctx context.Context,
+	req *pb.UploadFileRequest,
+) (*pb.UploadFileResponse, error) {
+	fileID, err := s.mediaService.UploadFile(
+		req.Filename,
+		req.ContentType,
+		req.Category,
+		int64(len(req.File)),
+		bytes.NewReader(req.File),
+	)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &pb.UploadFileResponse{FileId: fileID}, nil
+}
+
+func (s *MediaGrpcServer) GetFile(
+	ctx context.Context,
+	req *pb.GetFileRequest,
+) (*pb.GetFileResponse, error) {
+	url, err := s.mediaService.GetFile(req.FileId)
+	if err != nil {
+		return nil, err
+	}
+
+	return &pb.GetFileResponse{Url: url}, nil
+}

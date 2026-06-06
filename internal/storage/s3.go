@@ -119,7 +119,7 @@ func (s *S3Storage) GetPresignedURL(objectKey string) (string, error) {
 			Bucket: aws.String(s.Bucket),
 			Key:    aws.String(objectKey),
 		},
-		s3.WithPresignExpires(15*time.Minute),
+		s3.WithPresignExpires(1*time.Hour),
 	)
 
 	if err != nil {

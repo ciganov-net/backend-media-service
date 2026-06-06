@@ -8,5 +8,6 @@ type File struct {
 	ObjectKey string    `json:"object_key"`
 	Size      int64     `json:"size"`
 	MimeType  string    `json:"mime_type"`
+	Category  string    `json:"category"`
 	CreatedAt time.Time `json:"created_at"`
 }

@@ -1,10 +1,7 @@
 package handlers
 
 import (
-	"net/http"
-
 	"github.com/ciganov-net/backend-media-service/internal/service"
-	"github.com/gin-gonic/gin"
 )
 
 type FileHandler struct {
@@ -28,46 +25,46 @@ func NewFileHandler(
 // 	c.JSON(http.StatusOK, files)
 // }
 
-func (h *FileHandler) UploadFile(c *gin.Context) {
-	fileHeader, err := c.FormFile("file")
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "file is required"})
-		return
-	}
+// func (h *FileHandler) UploadFile(c *gin.Context) {
+// 	fileHeader, err := c.FormFile("file")
+// 	if err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{"error": "file is required"})
+// 		return
+// 	}
 
-	file, err := fileHeader.Open()
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-		return
-	}
+// 	file, err := fileHeader.Open()
+// 	if err != nil {
+// 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+// 		return
+// 	}
 
-	defer file.Close()
+// 	defer file.Close()
 
-	uploadedFile, err := h.service.Upload(
-		fileHeader.Filename,
-		fileHeader.Header.Get("Content-Type"),
-		fileHeader.Size,
-		file,
-	)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-		return
-	}
+// 	uploadedFile, err := h.service.Upload(
+// 		fileHeader.Filename,
+// 		fileHeader.Header.Get("Content-Type"),
+// 		fileHeader.Size,
+// 		file,
+// 	)
+// 	if err != nil {
+// 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+// 		return
+// 	}
 
-	c.JSON(http.StatusCreated, uploadedFile)
-}
+// 	c.JSON(http.StatusCreated, uploadedFile)
+// }
 
-func (h *FileHandler) DeleteFile(c *gin.Context) {
-	id := c.Param("id")
+// func (h *FileHandler) DeleteFile(c *gin.Context) {
+// 	id := c.Param("id")
 
-	err := h.service.Delete(id)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-		return
-	}
+// 	err := h.service.Delete(id)
+// 	if err != nil {
+// 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+// 		return
+// 	}
 
-	c.JSON(http.StatusOK, gin.H{"message": "file deleted"})
-}
+// 	c.JSON(http.StatusOK, gin.H{"message": "file deleted"})
+// }
 
 // was used to test in the browser [unrefactored]
 // func (h *FileHandler) GetDownloadURL(c *gin.Context) {

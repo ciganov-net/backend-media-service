@@ -14,12 +14,13 @@ func RunMigrations(db *pgxpool.Pool) error {
 		object_key TEXT NOT NULL,
 		size BIGINT NOT NULL,
 		mime_type TEXT NOT NULL,
+		category TEXT NOT NULL DEFAULT '',
 		created_at TIMESTAMP NOT NULL DEFAULT NOW()
 	);
 
 	CREATE TABLE IF NOT EXISTS user_avatars (
 		user_id TEXT PRIMARY KEY,
-		file_id UUID NOT NULL REFERENCES files(id) ON DELETE CASCADE,
+		file_id UUID NOT NULL REFERENCES files(id) ON DELETE CASCADE
 	);
 	`
 

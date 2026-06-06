@@ -23,6 +23,7 @@ func (r *FileRepository) GetAll() ([]models.File, error) {
 			object_key,
 			size,
 			mime_type,
+			category,
 			created_at
 		FROM files
 		ORDER BY created_at DESC
@@ -46,6 +47,7 @@ func (r *FileRepository) GetAll() ([]models.File, error) {
 			&file.ObjectKey,
 			&file.Size,
 			&file.MimeType,
+			&file.Category,
 			&file.CreatedAt,
 		)
 
@@ -66,9 +68,10 @@ func (r *FileRepository) Create(file models.File) error {
 		filename,
 		object_key,
 		size,
-		mime_type
+		mime_type,
+		category,
 	)
-	VALUES ($1, $2, $3, $4, $5)
+	VALUES ($1, $2, $3, $4, $5, $6)
 	`
 
 	_, err := r.db.Exec(
@@ -79,6 +82,7 @@ func (r *FileRepository) Create(file models.File) error {
 		file.ObjectKey,
 		file.Size,
 		file.MimeType,
+		file.Category,
 	)
 
 	return err
@@ -92,6 +96,7 @@ func (r *FileRepository) GetByID(id string) (*models.File, error) {
 		object_key,
 		size,
 		mime_type,
+		category,
 		created_at
 	FROM files
 	WHERE id = $1
@@ -105,6 +110,7 @@ func (r *FileRepository) GetByID(id string) (*models.File, error) {
 		&file.ObjectKey,
 		&file.Size,
 		&file.MimeType,
+		&file.Category,
 		&file.CreatedAt,
 	)
 

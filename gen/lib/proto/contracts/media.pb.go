@@ -133,6 +133,294 @@ func (x *UploadAvatarResponse) GetFileId() string {
 	return ""
 }
 
+type DeleteAvatarRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteAvatarRequest) Reset() {
+	*x = DeleteAvatarRequest{}
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteAvatarRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAvatarRequest) ProtoMessage() {}
+
+func (x *DeleteAvatarRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAvatarRequest.ProtoReflect.Descriptor instead.
+func (*DeleteAvatarRequest) Descriptor() ([]byte, []int) {
+	return file_lib_proto_contracts_media_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *DeleteAvatarRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type DeleteAvatarResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Ok            bool                   `protobuf:"varint,1,opt,name=ok,proto3" json:"ok,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteAvatarResponse) Reset() {
+	*x = DeleteAvatarResponse{}
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteAvatarResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAvatarResponse) ProtoMessage() {}
+
+func (x *DeleteAvatarResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAvatarResponse.ProtoReflect.Descriptor instead.
+func (*DeleteAvatarResponse) Descriptor() ([]byte, []int) {
+	return file_lib_proto_contracts_media_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *DeleteAvatarResponse) GetOk() bool {
+	if x != nil {
+		return x.Ok
+	}
+	return false
+}
+
+type UploadFileRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	File          []byte                 `protobuf:"bytes,1,opt,name=file,proto3" json:"file,omitempty"`
+	Filename      string                 `protobuf:"bytes,2,opt,name=filename,proto3" json:"filename,omitempty"`
+	ContentType   string                 `protobuf:"bytes,3,opt,name=content_type,json=contentType,proto3" json:"content_type,omitempty"`
+	Category      string                 `protobuf:"bytes,4,opt,name=category,proto3" json:"category,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UploadFileRequest) Reset() {
+	*x = UploadFileRequest{}
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UploadFileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UploadFileRequest) ProtoMessage() {}
+
+func (x *UploadFileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UploadFileRequest.ProtoReflect.Descriptor instead.
+func (*UploadFileRequest) Descriptor() ([]byte, []int) {
+	return file_lib_proto_contracts_media_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *UploadFileRequest) GetFile() []byte {
+	if x != nil {
+		return x.File
+	}
+	return nil
+}
+
+func (x *UploadFileRequest) GetFilename() string {
+	if x != nil {
+		return x.Filename
+	}
+	return ""
+}
+
+func (x *UploadFileRequest) GetContentType() string {
+	if x != nil {
+		return x.ContentType
+	}
+	return ""
+}
+
+func (x *UploadFileRequest) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+type UploadFileResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FileId        string                 `protobuf:"bytes,1,opt,name=file_id,json=fileId,proto3" json:"file_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UploadFileResponse) Reset() {
+	*x = UploadFileResponse{}
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UploadFileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UploadFileResponse) ProtoMessage() {}
+
+func (x *UploadFileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UploadFileResponse.ProtoReflect.Descriptor instead.
+func (*UploadFileResponse) Descriptor() ([]byte, []int) {
+	return file_lib_proto_contracts_media_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *UploadFileResponse) GetFileId() string {
+	if x != nil {
+		return x.FileId
+	}
+	return ""
+}
+
+type GetFileRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FileId        string                 `protobuf:"bytes,1,opt,name=file_id,json=fileId,proto3" json:"file_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetFileRequest) Reset() {
+	*x = GetFileRequest{}
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFileRequest) ProtoMessage() {}
+
+func (x *GetFileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFileRequest.ProtoReflect.Descriptor instead.
+func (*GetFileRequest) Descriptor() ([]byte, []int) {
+	return file_lib_proto_contracts_media_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetFileRequest) GetFileId() string {
+	if x != nil {
+		return x.FileId
+	}
+	return ""
+}
+
+type GetFileResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Url           string                 `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetFileResponse) Reset() {
+	*x = GetFileResponse{}
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFileResponse) ProtoMessage() {}
+
+func (x *GetFileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_lib_proto_contracts_media_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFileResponse.ProtoReflect.Descriptor instead.
+func (*GetFileResponse) Descriptor() ([]byte, []int) {
+	return file_lib_proto_contracts_media_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *GetFileResponse) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
 var File_lib_proto_contracts_media_proto protoreflect.FileDescriptor
 
 const file_lib_proto_contracts_media_proto_rawDesc = "" +
@@ -144,9 +432,28 @@ const file_lib_proto_contracts_media_proto_rawDesc = "" +
 	"\bfilename\x18\x03 \x01(\tR\bfilename\x12!\n" +
 	"\fcontent_type\x18\x04 \x01(\tR\vcontentType\"/\n" +
 	"\x14UploadAvatarResponse\x12\x17\n" +
-	"\afile_id\x18\x01 \x01(\tR\x06fileId2]\n" +
+	"\afile_id\x18\x01 \x01(\tR\x06fileId\".\n" +
+	"\x13DeleteAvatarRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"&\n" +
+	"\x14DeleteAvatarResponse\x12\x0e\n" +
+	"\x02ok\x18\x01 \x01(\bR\x02ok\"\x82\x01\n" +
+	"\x11UploadFileRequest\x12\x12\n" +
+	"\x04file\x18\x01 \x01(\fR\x04file\x12\x1a\n" +
+	"\bfilename\x18\x02 \x01(\tR\bfilename\x12!\n" +
+	"\fcontent_type\x18\x03 \x01(\tR\vcontentType\x12\x1a\n" +
+	"\bcategory\x18\x04 \x01(\tR\bcategory\"-\n" +
+	"\x12UploadFileResponse\x12\x17\n" +
+	"\afile_id\x18\x01 \x01(\tR\x06fileId\")\n" +
+	"\x0eGetFileRequest\x12\x17\n" +
+	"\afile_id\x18\x01 \x01(\tR\x06fileId\"#\n" +
+	"\x0fGetFileResponse\x12\x10\n" +
+	"\x03url\x18\x01 \x01(\tR\x03url2\xb5\x02\n" +
 	"\fMediaService\x12M\n" +
-	"\fUploadAvatar\x12\x1d.media.v1.UploadAvatarRequest\x1a\x1e.media.v1.UploadAvatarResponseB8Z6github.com/ciganov-net/backend-media-service/gen/mediab\x06proto3"
+	"\fUploadAvatar\x12\x1d.media.v1.UploadAvatarRequest\x1a\x1e.media.v1.UploadAvatarResponse\x12M\n" +
+	"\fDeleteAvatar\x12\x1d.media.v1.DeleteAvatarRequest\x1a\x1e.media.v1.DeleteAvatarResponse\x12G\n" +
+	"\n" +
+	"UploadFile\x12\x1b.media.v1.UploadFileRequest\x1a\x1c.media.v1.UploadFileResponse\x12>\n" +
+	"\aGetFile\x12\x18.media.v1.GetFileRequest\x1a\x19.media.v1.GetFileResponseB8Z6github.com/ciganov-net/backend-media-service/gen/mediab\x06proto3"
 
 var (
 	file_lib_proto_contracts_media_proto_rawDescOnce sync.Once
@@ -160,16 +467,28 @@ func file_lib_proto_contracts_media_proto_rawDescGZIP() []byte {
 	return file_lib_proto_contracts_media_proto_rawDescData
 }
 
-var file_lib_proto_contracts_media_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_lib_proto_contracts_media_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_lib_proto_contracts_media_proto_goTypes = []any{
 	(*UploadAvatarRequest)(nil),  // 0: media.v1.UploadAvatarRequest
 	(*UploadAvatarResponse)(nil), // 1: media.v1.UploadAvatarResponse
+	(*DeleteAvatarRequest)(nil),  // 2: media.v1.DeleteAvatarRequest
+	(*DeleteAvatarResponse)(nil), // 3: media.v1.DeleteAvatarResponse
+	(*UploadFileRequest)(nil),    // 4: media.v1.UploadFileRequest
+	(*UploadFileResponse)(nil),   // 5: media.v1.UploadFileResponse
+	(*GetFileRequest)(nil),       // 6: media.v1.GetFileRequest
+	(*GetFileResponse)(nil),      // 7: media.v1.GetFileResponse
 }
 var file_lib_proto_contracts_media_proto_depIdxs = []int32{
 	0, // 0: media.v1.MediaService.UploadAvatar:input_type -> media.v1.UploadAvatarRequest
-	1, // 1: media.v1.MediaService.UploadAvatar:output_type -> media.v1.UploadAvatarResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	2, // 1: media.v1.MediaService.DeleteAvatar:input_type -> media.v1.DeleteAvatarRequest
+	4, // 2: media.v1.MediaService.UploadFile:input_type -> media.v1.UploadFileRequest
+	6, // 3: media.v1.MediaService.GetFile:input_type -> media.v1.GetFileRequest
+	1, // 4: media.v1.MediaService.UploadAvatar:output_type -> media.v1.UploadAvatarResponse
+	3, // 5: media.v1.MediaService.DeleteAvatar:output_type -> media.v1.DeleteAvatarResponse
+	5, // 6: media.v1.MediaService.UploadFile:output_type -> media.v1.UploadFileResponse
+	7, // 7: media.v1.MediaService.GetFile:output_type -> media.v1.GetFileResponse
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -186,7 +505,7 @@ func file_lib_proto_contracts_media_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_lib_proto_contracts_media_proto_rawDesc), len(file_lib_proto_contracts_media_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

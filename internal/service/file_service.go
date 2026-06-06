@@ -26,6 +26,7 @@ func NewFileService(
 func (s *FileService) Upload(
 	filename string,
 	contentType string,
+	category string,
 	size int64,
 	file io.Reader,
 ) (*models.File, error) {
@@ -43,6 +44,7 @@ func (s *FileService) Upload(
 		ObjectKey: objectKey,
 		Size:      size,
 		MimeType:  contentType,
+		Category:  category,
 	}
 
 	if err := s.repo.Create(newFile); err != nil {
@@ -79,4 +81,13 @@ func (s *FileService) Delete(id string) error {
 
 func (s *FileService) Get(id string) (*models.File, error) {
 	return s.repo.GetByID(id)
+}
+
+func (s *FileService) GetUrl(fileId string) (string, error) {
+	file, err := s.repo.GetByID(fileId)
+	if err != nil {
+		return "", err
+	}
+
+	return s.storage.GetPresignedURL(file.ObjectKey)
 }
